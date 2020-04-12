@@ -12,7 +12,7 @@ def server_error(e):
 
 @app.before_request
 def handler():
-	if (flask.request.method == 'GET') and (flask.request.path == "/webhook_int"):
+	if (flask.request.method == 'GET') and (flask.request.path == "/start"):
 		params = dict(url = "{}/webhook".format(flask.request.host), max_connections = int(1), allowed_updates = "message")
 		url = "{}{}".format(cfg['TELEGRAM_API'], 'setWebhook')
 		r = requests.get(url,params=params).json() 
