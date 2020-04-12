@@ -21,3 +21,4 @@ venv.bak/
 
 # Project
 .gitlab-ci.yml
+Procfile
