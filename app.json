@@ -1,0 +1,17 @@
+{
+  "name": "Tetasbot",
+  "description": "Project developed for the telegram, using TELEGRAM-BOT-API",
+  "repository": "https://github.com/vycktorstark/nsfw",
+  "logo": "https://gitlab.com/uploads/-/system/project/avatar/18078762/photo_2020-04-11_20-07-59.jpg?width=64",
+  "image": "heroku/python",
+  "env": {
+    "SECRET_KEY": {
+      "description": "Your bot's token",
+      "value": ""
+    },
+    "LN": {
+      "description": "Default bot language (en, ar, es, fr, fr, pt, ja, ko)",
+      "value": "en"
+    }
+  }
+}
