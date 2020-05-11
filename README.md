@@ -17,15 +17,15 @@ You must have your machine up to date and have Python 3 installed, as well as so
 # Tested on Ubuntu 14.04, 15.04 and 16.04, Debian 7, Linux Mint 17.2
 $ sudo apt-get update && sudo apt-get upgrade   
 $ sudo apt install python3 && python3-pip
-$ sudo pip3 install flask && requests
+$ sudo pip3 install flask && requests 
 ```
-With everything installed, we will now clone the repository like this:
+With everything installed,  we will clone the repository like this:
 
 ```
 $ git clone https://github.com/VycktorStark/nsfw.git
 ```
 
-Now, with the repository installed, you should observe your bot's settings via [BotFather](http://telegram.me/BotFather), if you don't have one you need to create (more information on the [Bots official FAQ page](https://core.telegram.org/bots/faq#what-messages-will-my-bot-get))
+With the repository installed, you should observe your bot's settings via [BotFather](http://telegram.me/BotFather), if you don't have one you need to create (more information on the [Bots official FAQ page](https://core.telegram.org/bots/faq#what-messages-will-my-bot-get))
 
 > Make sure privacy is turned off. Send `/setprivacy` to [BotFather](http://telegram.me/BotFather), to check the current configuration.
 
@@ -37,7 +37,7 @@ After performing the check, with a text editor, make the following changes to th
 ## Boot process
 
 - To start the bot, run: sudo ./run.py
-- To stop the bot, press Ctrl + D.
+- To stop the bot, press Ctrl + C.
 You can also start the bot with python3 run.py
 
 Note: the project is via webhook, that is, you need a way to receive the request, I guide ngrok provisionally (soon I will put a function to switch between webhook and polling)
@@ -52,4 +52,4 @@ ready, now go to: https://projectname.com.br/start
 
 Note: replace "project name" with the name of your project
 
-Only this will make your project start working normally
+Only that, the project will already be working.
