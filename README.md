@@ -22,7 +22,7 @@ $ sudo pip3 install flask && requests
 With everything installed,  we will clone the repository like this:
 
 ```
-$ git clone https://github.com/VycktorStark/nsfw.git
+$ git clone https://github.com/VycktorStark/tetasrobot.git
 ```
 
 With the repository installed, you should observe your bot's settings via [BotFather](http://telegram.me/BotFather), if you don't have one you need to create (more information on the [Bots official FAQ page](https://core.telegram.org/bots/faq#what-messages-will-my-bot-get))
