@@ -20,10 +20,10 @@ def handler():
 	
 	elif (flask.request.method == 'POST') and (flask.request.path == "/webhook"):
 		msg = flask.request.get_json(silent=True, force=True)['message']
-		if ("language_code" in  msg['from']) is True:
+		if ("language_code" in  msg['from']):
 			cfg['LN'] = msg['from']['language_code'][:2]
-		if ('text' in msg) and ("entities" in msg) is True:
-				if ("bot_command" in msg['entities'][0]['type']) is True:
+		if ('text' in msg) and ("entities" in msg):
+				if ("bot_command" in msg['entities'][0]['type']) and (msg['text'] != None):
 					cmd = msg['text'].replace('/','').lower().split()
 					cmd = replace_(cmd[0])
 					return msg_receive_(msg, cmd, cfg['LN'])

@@ -12,11 +12,11 @@ def msg_receive_(msg, cmd, ln):
 			parse_mode =  "HTML"
 			)
 	print(cmd)
-	if ('help' in cmd) is True: 
+	if ('help' in cmd): 
 		params['text'] = cfg['TR'][ln][0]['start']
-	elif ('about' in cmd) is True:
+	elif ('about' in cmd):
 		params['text'] = cfg['TR'][ln][0]['about']
-	elif ('ping' in cmd) is True: 
+	elif ('ping' in cmd): 
 		params['text'] = 'pong'
 	elif ('boobs' in cmd) or ('butts' in cmd) or ('nsfw' in cmd):
 		params['method'] = 'sendPhoto'
