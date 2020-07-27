@@ -11,7 +11,6 @@ def msg_receive_(msg, cmd, ln):
 			reply_to_message_id  = msg['message_id'],
 			parse_mode =  "HTML"
 			)
-	print(cmd)
 	if ('help' in cmd): 
 		params['text'] = cfg['TR'][ln][0]['start']
 	elif ('about' in cmd):

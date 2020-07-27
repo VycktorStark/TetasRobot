@@ -1,6 +1,7 @@
-from main import flask, os, json, requests, msg_receive_, app, cfg
+from main import flask, json, requests, msg_receive_, app, cfg
 
-def replace_(text):
+def replace_command(text):
+	text = text.replace('/','').lower().split()[0]
 	subsss = cfg['FIX']
 	for i in subsss[0]:
 		if text == i:
@@ -14,18 +15,19 @@ def server_error(e):
 def handler():
 	if (flask.request.method == 'GET') and (flask.request.path == "/start"):
 		params = dict(url = "{}/webhook".format(flask.request.host), max_connections = int(1), allowed_updates = "message")
-		url = "{}{}".format(cfg['TELEGRAM_API'], 'setWebhook')
-		r = requests.get(url,params=params).json() 
+		r = requests.get(f"{cfg['TELEGRAM_API']}/setWebhook",params=params).json() 
 		return flask.Response(response=r['description'], status=200)
 	
 	elif (flask.request.method == 'POST') and (flask.request.path == "/webhook"):
-		msg = flask.request.get_json(silent=True, force=True)['message']
-		if ("language_code" in  msg['from']):
-			cfg['LN'] = msg['from']['language_code'][:2]
-		if ('text' in msg) and ("entities" in msg):
-				if ("bot_command" in msg['entities'][0]['type']) and (msg['text'] != None):
-					cmd = msg['text'].replace('/','').lower().split()
-					cmd = replace_(cmd[0])
-					return msg_receive_(msg, cmd, cfg['LN'])
-		else:
-			return flask.Response(status=200)
+		msg = flask.request.get_json(silent=True, force=True)
+		if ('message' in msg):
+			msg = msg['message']
+			if ("language_code" in  msg['from']):
+				cfg['LN'] = msg['from']['language_code'][:2]
+			if ('text' in msg) and ("entities" in msg):
+				if ("bot_command" in msg['entities'][0]['type']):
+					cmd = replace_command(msg['text'])
+					if (cmd):
+						return msg_receive_(msg, cmd, cfg['LN'])
+			else:
+				return flask.Response(status=200)

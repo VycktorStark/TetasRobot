@@ -3,7 +3,7 @@ LN = os.environ['LN']
 TR = lang.languages
 SECRET_KEY = os.environ['SECRET_KEY']
 IDBOT =  SECRET_KEY[:9]
-TELEGRAM_API = 'https://api.telegram.org/bot{token}/'.format(token=SECRET_KEY)
+TELEGRAM_API = f'https://api.telegram.org/bot{SECRET_KEY}'
 FIX = [{
 	'nsfw': random.choice(['boobs','butts']),
 	'butts': 'butts', 
