@@ -22,7 +22,7 @@ def msg_receive_(msg, cmd, ln):
 		typ = "noise"
 		if ('butts' in cmd):
 			typ = "butts"
-		url = requests.get('http://api.o{}.ru/{}/1'.format(cmd))
+		url = requests.get('http://api.o{}.ru/{}/1'.format(cmd, typ))
 		params['photo'] = 'http://media.o{}.ru/{}'.format(cmd, url.json()[0]["preview"])
 		params['caption'] = "By: @TetasRobot"
 	return flask.Response(response=json.dumps(params), headers={'Content-Type':'application/json'},status=200)
