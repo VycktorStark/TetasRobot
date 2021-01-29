@@ -17,9 +17,12 @@ def msg_receive_(msg, cmd, ln):
 		params['text'] = cfg['TR'][ln][0]['about']
 	elif ('ping' in cmd): 
 		params['text'] = 'pong'
-	elif ('boobs' in cmd) or ('butts' in cmd) or ('nsfw' in cmd):
+	elif ('boobs' in cmd) or ('butts' in cmd):
 		params['method'] = 'sendPhoto'
-		url = requests.get('http://api.o{}.ru/noise/1'.format(cmd))
+		typ = "noise"
+		if ('butts' in cmd):
+			typ = "butts"
+		url = requests.get('http://api.o{}.ru/{}/1'.format(cmd))
 		params['photo'] = 'http://media.o{}.ru/{}'.format(cmd, url.json()[0]["preview"])
 		params['caption'] = "By: @TetasRobot"
 	return flask.Response(response=json.dumps(params), headers={'Content-Type':'application/json'},status=200)
