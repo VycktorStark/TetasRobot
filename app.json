@@ -2,7 +2,7 @@
   "name": "Tetasbot",
   "description": "Project developed for the telegram, using TELEGRAM-BOT-API",
   "repository": "https://github.com/vycktorstark/TetasRobot",
-  "logo": "https://gitlab.com/uploads/-/system/project/avatar/18078762/photo_2020-04-11_20-07-59.jpg?width=64",
+  "logo": "https://cdn1.telesco.pe/file/fG9ZxYhh9skE3e-GJlNJbcy7NFESmVSxDzUx3NXD-xDjePWvTXZ1f9JI3vOgqdkL9nVp8PlczcVDX99xEuqnvDtaikQYKOPDTNKTanYyDXaa86nkaU4fqOHZktvXeP79AdeDOmCxEXWbQyNMJPaHHttW2I_aQ8mXHsGnquxR7d3Xyuse-OwTljVmEszU1IZGBEmzzsxLgFQwjase-x9WRLAkKV5ktVwYS6PDRf6kDiJV-vCS11bMFe0JpyWRVtcp14uLaesOE3MLx8XX1q3SjmEEqmy4wElEkG34A6cT3ML2ZD-al-BXsBIlJ6YQ8FKgjRNl_eAn542Pu-XfKe-1Ow.jpg",
   "image": "heroku/python",
   "env": {
     "SECRET_KEY": {
