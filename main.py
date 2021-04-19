@@ -26,18 +26,18 @@ def handler():
 	
 	elif (flask.request.method == 'POST') and (flask.request.path == "/webhook"):
 		if ('message' in vetor):
-			msg = vetor['message']
+			msg, LN = vetor['message'], cfg['LN']
 			if ("language_code" in  msg['from']):
-				cfg['LN'] = msg['from']['language_code'][:2]
+				LN = msg['from']['language_code'][:2]
 			if ('text' in msg) and ("entities" in msg):
 				if ("bot_command" in msg['entities'][0]['type']):
 					cmd  = replace_command(msg['text'])
 					if not (cmd) is None:
-						params = dict(method ='sendMessage', text = cfg['TR'][ln][0]['cmderror'], chat_id = msg['chat']['id'], reply_to_message_id  = msg['message_id'], parse_mode =  "HTML")
+						params = dict(method ='sendMessage', text = cfg['TR'][LN][0]['cmderror'], chat_id = msg['chat']['id'], reply_to_message_id  = msg['message_id'], parse_mode =  "HTML")
 						if ('help' in cmd): 
-							params['text'] = cfg['TR'][ln][0]['start']
+							params['text'] = cfg['TR'][LN][0]['start']
 						elif ('about' in cmd):
-							params['text'] = cfg['TR'][ln][0]['about']
+							params['text'] = cfg['TR'][LN][0]['about']
 						elif ('ping' in cmd): 
 							params['text'] = 'pong'
 						elif ('boobs' in cmd):
