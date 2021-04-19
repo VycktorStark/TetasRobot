@@ -46,6 +46,7 @@ def handler():
 							params['photo'] = f'http://media.oboobs.ru/{url.json()[0]["preview"]}'
 							params['caption'] = "By: @TetasRobot"
 						elif ('butts' in cmd):
+							params['method'] = 'sendPhoto'
 							url = requests.get(f'http://api.obutts.ru/butts/{random.randint(0,999)}')
 							params['photo'] = f'http://media.obutts.ru/{url.json()[0]["preview"]}'
 							params['caption'] = "By: @TetasRobot"
